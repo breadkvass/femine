@@ -1,20 +1,19 @@
 .header {
-  width: calc(100vw - 100px);
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: transparent;
-  padding: 20px 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0);
+  transition: all .7s cubic-bezier(0.4, 0, 0.2, 1);
   position: sticky;
+  top: 0;
   z-index: 10;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  color: white;
 }
 
-.header img {
+.content img {
   height: 40px;
   width: auto;
+  padding-bottom: 2px;
 }
 
 .links {
@@ -22,4 +21,29 @@
   flex-direction: row;
   align-items: center;
   gap: 20px;
+}
+
+.content {
+  width: calc(100vw - 100px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header.scrolled {
+  background-color: rgba(69, 74, 69, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Для Safari */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+@media screen and (max-width: 1024px) {
+  .links {
+    gap: 12px;
+  }
 }

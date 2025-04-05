@@ -1,0 +1,54 @@
+/* CustomNavLink.module.css */
+
+.listItem {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+ul .link {
+    opacity: 0.8;
+    padding: 4px 16px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    margin-bottom: -1px;
+    display: inline-block; /* Важно для transform */
+    transition: 
+        opacity var(--transition-time) ease,
+        border var(--transition-time) ease,
+        border-radius var(--transition-time) ease,
+        transform var(--transition-time) ease;
+    will-change: transform, opacity, border;
+    backface-visibility: hidden;
+}
+
+ul .link:hover {
+    opacity: 1;
+    border-bottom-color: var(--feminist-pink);
+    transform: translateY(-4px);
+}
+
+ul .activeLink {
+    opacity: 1;
+    border-color: var(--feminist-pink);
+    border-radius: 40px;
+    cursor: default;
+}
+
+/* Отключаем трансформацию только для активной ссылки */
+ul .activeLink:hover {
+    transform: none;
+}
+
+a {
+    font-weight: 500;
+}
+
+@media (hover: none) {
+    ul .link:hover {
+        border-bottom-color: transparent;
+    }
+
+    ul .activeLink {
+        border: 2px solid var(--feminist-pink);
+    }
+}
