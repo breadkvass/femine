@@ -1,0 +1,86 @@
+.start {
+  width: 100vw;
+  height: max-content;
+  background-image: url("../../../public/start.jpg");
+  background-size: cover;
+  background-position: top;
+}
+
+.content {
+  padding: 20% 0 40px 0;
+  max-width: 1200px;
+  width: calc(100vw - 100px);
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.title {
+  font-family: "Rubik Spray Paint", system-ui;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 84px;
+  color: white;
+}
+
+.description {
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.points {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+  width: calc(100% - 100px);
+}
+
+.point {
+  padding: 16px 24px;
+  border: 1px solid white;
+  border-radius: 30px;
+}
+
+.point:first-child {
+  margin-right: auto;
+}
+
+.point:last-child {
+  margin-left: auto;
+}
+
+span {
+  margin-top: 40px;
+  background-color: white;
+  height: 1px;
+  width: 200px;
+}
+
+.content p:last-child {
+  margin-top: 40px;
+}
+
+@media screen and (min-width: 1440px) {
+  .content {
+    padding: 300px 0 40px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    padding: 30% 0 40px 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .content {
+    padding: 60% 0 40px 0;
+  }
+}
