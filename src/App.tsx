@@ -10,10 +10,10 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route path="/" element={<HomePage />} />
-      <Route path="/about" element={<></>} />
+      <Route path="/about" element={<HomePage />} />
       <Route path="/events" element={<EventsPage />} />
-      <Route path="/contacts" element={<></>} />
-      <Route path="/superwomen" element={<></>} />
+      <Route path="/contacts" element={<HomePage />} />
+      <Route path="/superwomen" element={<HomePage />} />
     </Route>
   )
 );
