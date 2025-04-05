@@ -1,21 +1,24 @@
-.start {
+.hero {
   width: 100vw;
   height: max-content;
-  background-image: url("../../../public/start.jpg");
+  background-image: url("../../assets/images/start.jpg");
   background-size: cover;
   background-position: top;
 }
 
 .content {
-  padding: 20% 0 40px 0;
   max-width: 1200px;
   width: calc(100vw - 100px);
   height: 100%;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+}
+
+.hero .content {
+  padding-top: 20%;
   align-items: center;
   justify-content: flex-start;
+  flex-direction: column;
 }
 
 .title {
@@ -27,60 +30,47 @@
 }
 
 .description {
+  width: 420px;
+  margin-top: 60px;
   text-align: center;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 20px;
 }
 
 .points {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 40px;
-  width: calc(100% - 100px);
-}
-
-.point {
-  padding: 16px 24px;
-  border: 1px solid white;
-  border-radius: 30px;
-}
-
-.point:first-child {
-  margin-right: auto;
-}
-
-.point:last-child {
-  margin-left: auto;
+  width: 100vw;
+  height: 1200px;
+  background-color: #ffffff;
+  position: static;
 }
 
 span {
-  margin-top: 40px;
-  background-color: white;
+  margin-top: 10px;
+  background-color: #ea598b;
   height: 1px;
   width: 200px;
 }
 
 .content p:last-child {
-  margin-top: 40px;
+  margin: 10px 0;
+  font-size: 16px;
 }
 
 @media screen and (min-width: 1440px) {
   .content {
-    padding: 300px 0 40px 0;
+    padding-top: 300px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .content {
-    padding: 30% 0 40px 0;
+    padding-top: 30%;
   }
 }
 
 @media screen and (max-width: 500px) {
   .content {
-    padding: 60% 0 40px 0;
+    padding-top: 60%;
   }
 }
