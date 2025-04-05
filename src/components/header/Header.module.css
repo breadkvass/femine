@@ -1,0 +1,25 @@
+.header {
+  width: calc(100vw - 100px);
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: transparent;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  z-index: 10;
+}
+
+.header img {
+  height: 40px;
+  width: auto;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
