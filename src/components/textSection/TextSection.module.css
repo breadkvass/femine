@@ -1,0 +1,188 @@
+.background {
+    width: 100vw;
+    background-color: var(--green);
+    border-bottom: 3px solid var(--feminist-pink);
+}
+
+.background .content {
+    max-width: 1200px;
+    width: calc(100vw - 100px);
+    height: 100%;
+    margin: 0 auto;
+    border: 3px solid var(--feminist-pink);
+    padding: 80px;
+    border-radius: 100px;
+    margin: 80px auto;
+    position: relative;
+    background: 24% 93% no-repeat url('../../assets/images/lines.png');
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 62%;
+    position: relative;
+}
+
+.textContainer::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 100px;
+    height: 100px;
+    background: no-repeat url(/src/assets/images/fem.png);
+    transform: rotate(70deg);
+}
+
+.background p {
+    font-size: 20px;
+    line-height: 26px;
+}
+
+.background p:last-child {
+    margin-top: 20px;
+    text-align: end;
+}
+
+.background .photo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: calc(100% + 150px);
+    border-bottom-right-radius: 97px;
+}
+
+.dotsImg {
+    position: absolute;
+    top: 0px;
+    left: -24px;
+}
+
+@media screen and (max-width: 1280px) {
+    .background .content {
+        width: calc(100vw - 64px);
+        padding: 50px;
+        margin: 50px auto;
+        position: relative;
+        background: 24% 96% no-repeat url('../../assets/images/lines.png');
+    }
+
+    .background p {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .background .photo {
+        height: calc(100% + 120px);
+    }
+
+    .textContainer {
+        gap: 16px;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .background .content {
+        background: 13% 97% no-repeat url('../../assets/images/lines.png');
+    }
+
+    .background .photo {
+        height: 74%;
+    }
+
+    .background p:nth-child(1), p:nth-child(2) {
+        width: 100%;
+    }
+
+    .background p:nth-child(3), p:nth-child(4), p:nth-child(5), p:nth-child(6) {
+        width: 64%;
+    }
+
+    .textContainer {
+        width: 100%;
+    }
+
+    .textContainer::before {
+        top: -14%;
+        left: 93%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .background .content {
+        background: 15% 105% no-repeat url('../../assets/images/lines.png');
+        width: calc(100vw - 32px);
+        padding: 12px;
+        margin: 16px auto;
+        border-radius: 40px;
+    }
+
+    .background p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .background p:nth-child(1), .background p:nth-child(2) {
+        width: 100%;
+    }
+
+    .background p:nth-child(4), .background p:nth-child(5), .background p:nth-child(6) {
+        width: 66%;
+    }
+
+    .background .photo {
+        border-bottom-right-radius: 37px;
+        height: 80%;
+    }
+
+    .textContainer {
+        width: 100%;
+    }
+
+    .textContainer::before {
+        top: -19%;
+        left: 87%;
+        transform: rotate(55deg);
+    }
+
+    .dotsImg {
+        width: 80px;
+        top: -41px;
+        left: -16px;
+    }
+}
+
+
+@media screen and (max-width: 569px) {
+    .background .content {
+        background: 24% 93% no-repeat url('../../assets/images/lines.png');
+    }
+
+    .background p:nth-child(3) {
+        width: 100%;
+    }
+
+    .background p:nth-child(4), .background p:nth-child(5) {
+        width: 70%;
+    }
+
+    .background p:nth-child(6) {
+        width: 60%;
+    }
+
+    .background .photo {
+        height: 40%;
+    }
+
+    .textContainer {
+        z-index: 1;
+    }
+
+    .textContainer::before {
+        top: -26%;
+        left: 73%;
+    }
+}
