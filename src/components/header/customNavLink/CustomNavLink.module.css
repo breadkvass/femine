@@ -1,8 +1,7 @@
-/* CustomNavLink.module.css */
-
 .listItem {
     display: inline-block;
     margin: 0 5px;
+    text-align: center;
 }
 
 ul .link {
@@ -11,7 +10,7 @@ ul .link {
     border: 1px solid transparent;
     border-radius: 2px;
     margin-bottom: -1px;
-    display: inline-block; /* Важно для transform */
+    display: inline-block;
     transition: 
         opacity var(--transition-time) ease,
         border var(--transition-time) ease,
@@ -34,13 +33,13 @@ ul .activeLink {
     cursor: default;
 }
 
-/* Отключаем трансформацию только для активной ссылки */
 ul .activeLink:hover {
     transform: none;
 }
 
 a {
     font-weight: 500;
+    font-size: 16px;
 }
 
 @media (hover: none) {
@@ -50,5 +49,11 @@ a {
 
     ul .activeLink {
         border: 2px solid var(--feminist-pink);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    a {
+      font-size: 14px;
     }
 }

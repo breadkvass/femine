@@ -42,8 +42,14 @@
   color: black;
 }
 
-@media screen and (max-width: 1024px) {
-  .links {
-    gap: 12px;
+@media screen and (max-width: 767px) {  
+  .content {
+    width: calc(100vw - 80px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content {
+    width: calc(100vw - 32px);
   }
 }

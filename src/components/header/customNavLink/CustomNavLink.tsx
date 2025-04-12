@@ -1,28 +1,30 @@
 import { NavLink } from 'react-router-dom';
 import { FC, ReactNode, useState } from 'react';
+import { ActiveLinkType } from '../../../utils/types';
 import styles from './CustomNavLink.module.css';
 
-type ActiveLinkType = '/' | '/about' | '/events' | '/contacts' | '/superwomen';
 
 type CustomNavLinkProps = {
     activeLinkType: ActiveLinkType;
     label: ReactNode;
+    onClick?: () => void;
 }
 
-const CustomNavLink: FC<CustomNavLinkProps> = ({activeLinkType, label}) => {
-    const [activeNavLink, setActiveNavLink] = useState<ActiveLinkType>('/')
+const CustomNavLink: FC<CustomNavLinkProps> = ({activeLinkType, label, onClick}) => {
+    const [ isActiveNavLink, setIsActiveNavLink] = useState(false);
 
-    const setActiveStyle = (isActive: boolean, link: ActiveLinkType) => {
-        setActiveNavLink(link);
-        return !isActive ? styles.link : `${styles.link} ${styles.activeLink}`
-    };
+    const onClickHandler = () => {
+        setIsActiveNavLink(true);
+        if (onClick) onClick();
+    }
 
     return (
         <li className={styles.listItem}>
             <NavLink
-                aria-disabled={activeNavLink === activeLinkType}
+                aria-disabled={!isActiveNavLink}
                 to={activeLinkType}
-                className={({ isActive }) => setActiveStyle(isActive, activeLinkType)}
+                className={({ isActive }) => !isActive ? styles.link : `${styles.link} ${styles.activeLink}`}
+                onClick={onClickHandler}
             >
                 {label}
             </NavLink>

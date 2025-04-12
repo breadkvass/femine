@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import logoWhite from '../../assets/images/logo-white.png';
-import CustomNavLink from './customNavLink/customNavLink';
+import CustomNavLink from './customNavLink/CustomNavLink';
 import styles from './Header.module.css';
+import Navigation from './navigation/Navigation';
+import { TRoute } from '../../utils/types';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,25 +15,27 @@ const Header = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
+
+  const routes: TRoute[] = [
+    { route: '/about', label: 'о нас' },
+    { route: '/events', label: 'мероприятия' },
+    { route: '/contacts', label: 'контакты' },
+    { route: '/superwomen', label: 'база специалисток' }
+  ]
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.content}>
         <CustomNavLink
           activeLinkType='/'
-          label={ <img className={styles.logo} src={logoWhite} alt='Логотип' />}
+          label={<img className={styles.logo} src={logoWhite} alt='Логотип' />}
         />
-        
-        <nav>
-          <ul className={styles.links}>
-            <CustomNavLink activeLinkType='/about' label='о нас' />
-            <CustomNavLink activeLinkType='/events' label='мероприятия' />
-            <CustomNavLink activeLinkType='/contacts' label='контакты' />
-            <CustomNavLink activeLinkType='/superwomen' label='база специалисток' />
-          </ul>
-        </nav>
+        <Navigation routes={routes} />
       </div>
     </header>
   );
