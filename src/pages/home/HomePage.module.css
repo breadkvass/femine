@@ -1,7 +1,7 @@
 .hero {
   width: 100vw;
   height: max-content;
-  background-image: url("../../assets/images/start.jpg");
+  background-image: url("../../assets/images/photo/start.jpg");
   background-size: cover;
   background-position: top;
   padding-bottom: 40px;

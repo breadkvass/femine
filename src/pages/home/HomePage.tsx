@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import Layout from '../../components/layout/Layout';
 import styles from './HomePage.module.css';
-import TextSection from '../../components/textSection/TextSection';
+import Description from '../../components/descriptionSection/Description';
 
 const HomePage = () => {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleButtonClick = () => {
     setIsClicked(true);
-    // Здесь может быть логика для обработки клика
+    // Здесь будет логика для обработки клика
     console.log('Кнопка "Присоединиться" была нажата');
     setTimeout(() => setIsClicked(false), 300); // Сбрасываем состояние через 300мс
   };
@@ -31,7 +31,7 @@ const HomePage = () => {
           <p className={styles.description}>оффлайн в&nbsp;Москве | онлайн по&nbsp;всему миру</p>
         </div>
       </section>
-      <TextSection />
+      <Description />
     </Layout>
   );
 };

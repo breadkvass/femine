@@ -1,8 +1,8 @@
-import Photo from '../../assets/images/nastya.png';
+import Photo from '../../assets/images/photo/nastya.png';
 import Dots from '../../assets/images/dots.png';
-import styles from './TextSection.module.css';
+import styles from './Description.module.css';
 
-const TextSection = () => {
+const Description = () => {
   return (
       <section className={styles.background}>
         <div className={styles.content}>
@@ -36,4 +36,4 @@ const TextSection = () => {
   );
 };
 
-export default TextSection;
+export default Description;
