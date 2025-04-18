@@ -7,6 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  margin-top: -87px;
 }
 
 :root {
@@ -23,8 +24,16 @@ body {
   min-width: 100vw;
 }
 
+form * {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+.layout section:first-child {
+  padding-top: 87px;
 }
 
 a {
@@ -43,7 +52,7 @@ ul {
 }
 
 button {
-  font-family: 'Poppins', Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   border: none;
   background-color: transparent;
   cursor: pointer;

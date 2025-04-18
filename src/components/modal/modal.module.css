@@ -1,0 +1,36 @@
+.modal {
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 30px;
+    position: absolute;
+    padding: 16px;
+    position: relative;
+}
+
+.closeButton {
+    position: absolute;
+    top: -28px;
+    right: -32px;
+    width: 40px;
+    aspect-ratio: 1 / 1;
+}
+
+@media (max-width: 500px) {
+    .modal {
+        height: 100%;
+        width: 100%;
+        padding: 0 16px;
+        position: static;
+        border-radius: 0;
+    }
+
+    .closeButton {
+        width: 24px;
+        top: 24px;
+        right: 30px;
+    }
+
+    .closeButton svg path {
+        fill: var(--feminist-pink);
+    }
+}
