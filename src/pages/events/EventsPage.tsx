@@ -1,16 +1,19 @@
-import { Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import Layout from '../../components/layout/Layout';
+import EventForm from '../../components/forms/eventForm/eventForm';
 import styles from './EventsPage.module.css';
 
 const EventsPage = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className={styles.container}>
-      <Typography variant="h2" component="h1" gutterBottom>
-        Наши мероприятия
-      </Typography>
-      <Typography variant="body1">
-        Список предстоящих событий появится здесь скоро
-      </Typography>
-    </div>
+    <Layout>
+      <section className={styles.events}>
+        <div className={styles.wavyContainer}>
+          <EventForm navigate={navigate}/>
+        </div>
+      </section>
+    </Layout>
   );
 };
 
