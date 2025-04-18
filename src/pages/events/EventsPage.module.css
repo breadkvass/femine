@@ -1,4 +1,21 @@
-.container {
-    padding: 2rem;
-    margin: 0 auto;
+.events {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--green);
+  padding-top: 87px;
+  background: url(../../assets/images/events-background3.svg);
+  background-size: cover;
+  background-position: top;
+}
+
+.wavyContainer {
+  padding-top: 4%;
+  width: max-content;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+  .wavyContainer {
+    width: calc(100% - 32px);
   }
+}
