@@ -1,15 +1,20 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ModalContext } from '../../hooks/useModal/useModalProvider';
+import Modal from '../../components/modal/modal';
+import EventForm from '../../components/forms/eventForm/eventForm';
 import Layout from '../../components/layout/Layout';
-import styles from './HomePage.module.css';
 import Description from '../../components/descriptionSection/Description';
+import styles from './HomePage.module.css';
 
 const HomePage = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const [ openModal ] = useContext(ModalContext);
+  const navigate = useNavigate();
 
   const handleButtonClick = () => {
     setIsClicked(true);
-    // Здесь будет логика для обработки клика
-    console.log('Кнопка "Присоединиться" была нажата');
+    openModal(<Modal><EventForm navigate={navigate}/></Modal>)
     setTimeout(() => setIsClicked(false), 300); // Сбрасываем состояние через 300мс
   };
 
