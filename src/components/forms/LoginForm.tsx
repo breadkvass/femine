@@ -24,7 +24,7 @@ const LoginForm: FC<LoginFormProps> = ({ navigate }) => {
       errors.email = 'введите корректный email';
     }
     if (password.length < 6) {
-      errors.password = 'пароль должен быть не короче 6 символов';
+      errors.password = 'пароль должен быть не короче 8 символов';
     }
     setLocalError(errors);
   }, [email, password]);
@@ -73,7 +73,7 @@ const LoginForm: FC<LoginFormProps> = ({ navigate }) => {
           onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
           onBlur={() => handleBlur('password')}
           className={styles.input}
-          placeholder="минимум 6 символов"
+          placeholder="минимум 8 символов"
         />
         {shouldShowError('password') && <span className={styles.error}>{localError.password}</span>}
       </div>
