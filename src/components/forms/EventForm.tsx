@@ -1,7 +1,9 @@
 import { useState, useEffect, FormEvent, ChangeEvent, useCallback, useContext, FC } from 'react';
-import { ModalContext } from '../../../hooks/useModal/useModalProvider';
 import { NavigateFunction } from 'react-router-dom';
-import styles from './eventForm.module.css';
+import { ModalContext } from '../../hooks/useModal/useModalProvider';
+import { getEventsThunk } from '../../utils/api';
+import styles from './Form.module.css';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
 type FormErrors = {
   meeting?: string;
@@ -22,13 +24,15 @@ type EventFormProps = {
 }
 
 const EventForm: FC<EventFormProps> = ({navigate}) => {
+  const dispatch = useAppDispatch();
+  const { eventsList } = useAppSelector((state) => state.events);
   const [ , closeModal ] = useContext(ModalContext);
-  const [selectedMeeting, setSelectedMeeting] = useState<string>('');
-  const [name, setName] = useState<string>('');
-  const [isAdult, setIsAdult] = useState<boolean | null>(null);
-  const [telegram, setTelegram] = useState<string>('@');
-  const [errors, setErrors] = useState<FormErrors>({});
-  const [touched, setTouched] = useState<TouchedFields>({
+  const [ selectedMeeting, setSelectedMeeting ] = useState<string>('');
+  const [ name, setName ] = useState<string>('');
+  const [ isAdult, setIsAdult ] = useState<boolean | null>(null);
+  const [ telegram, setTelegram ] = useState<string>('@');
+  const [ errors, setErrors ] = useState<FormErrors>({});
+  const [ touched, setTouched ] = useState<TouchedFields>({
     meeting: false,
     name: false,
     adult: false,
@@ -38,12 +42,10 @@ const EventForm: FC<EventFormProps> = ({navigate}) => {
   const [isFormValid, setIsFormValid] = useState<boolean>(false);
   const [ isSuccessful, setIsSuccessful ] = useState<boolean | null>(null);
 
-  const meetingTypes = [
-    { value: '', label: 'выбери встречу' },
-    { value: 'book-club', label: 'книжный клуб (20 апреля, онлайн)' },
-    { value: 'photo-day', label: 'фотодень (27 апреля, Москва)' },
-    { value: 'art-online', label: 'арт-практика (4 мая, онлайн)' },
-  ];
+  useEffect(() => {
+    dispatch(getEventsThunk())
+  
+  }, [])
 
   const validateForm = useCallback((): boolean => {
     const newErrors: FormErrors = {};
@@ -104,10 +106,10 @@ const EventForm: FC<EventFormProps> = ({navigate}) => {
 
   const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
-    const event = meetingTypes.find((item) => item.value === selectedMeeting);
+    const event = eventsList.find((item) => item.id === selectedMeeting);
     if (event) {
       const formData = {
-        event: event.label,
+        event: event.title,
         name: name,
         isAdult: isAdult ? 'Да' : 'Нет',
         telegram: telegram
@@ -153,9 +155,9 @@ const EventForm: FC<EventFormProps> = ({navigate}) => {
           onBlur={() => handleBlur('meeting')}
           className={styles.select}
         >
-          {meetingTypes.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
+          {eventsList.map((option) => (
+            <option key={option.id} value={option.id}>
+              {option.title}
             </option>
           ))}
         </select>
