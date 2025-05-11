@@ -18,8 +18,9 @@ const router = createBrowserRouter(
       <Route path="/contacts" element={<HomePage />} />
       <Route path="/superwomen" element={<HomePage />} />
       <Route path="/auth" element={<AuthPage />} />
-      <Route path="/profile" element={<ProfilePage />} />
-      <Route path="/admin" element={<AdminPage />} />
+      {/* <Route path="/community" element={< />} /> */}
+      <Route path="/community/profile" element={<ProfilePage />} />
+      <Route path="/community/admin" element={<AdminPage />} />
     </Route>
   )
 );

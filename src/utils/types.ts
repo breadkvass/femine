@@ -1,4 +1,4 @@
-export type ActiveLinkType = '/' | '/about' | '/events' | '/contacts' | '/superwomen';
+export type ActiveLinkType = '/' | '/about' | '/contacts' | '/auth' | '/community';
 
 export type TRoute = {
     route: ActiveLinkType;
