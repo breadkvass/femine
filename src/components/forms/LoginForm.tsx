@@ -36,7 +36,7 @@ const LoginForm: FC<LoginFormProps> = ({ navigate }) => {
     if (Object.keys(localError).length === 0) {
       dispatch(loginUserThunk({ email, password }))
       .then(() => {
-        navigate('/profile')
+        navigate('/community')
       });
     }
   };

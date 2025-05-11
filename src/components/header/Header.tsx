@@ -24,7 +24,7 @@ const Header = () => {
   const routes: TRoute[] = [
     { route: '/about', label: 'о нас' },
     { route: '/contacts', label: 'контакты' },
-    { route: '/superwomen', label: 'база специалисток' }
+    { route: '/auth', label: 'присоединиться' }
   ]
 
   return (
