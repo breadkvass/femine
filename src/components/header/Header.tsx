@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
+import { TRoute } from '../../utils/types';
 import logoWhite from '../../assets/images/logo-white.png';
 import CustomNavLink from './customNavLink/CustomNavLink';
-import styles from './Header.module.css';
 import Navigation from './navigation/Navigation';
-import { TRoute } from '../../utils/types';
+import styles from './Header.module.css';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,7 +23,6 @@ const Header = () => {
 
   const routes: TRoute[] = [
     { route: '/about', label: 'о нас' },
-    { route: '/events', label: 'мероприятия' },
     { route: '/contacts', label: 'контакты' },
     { route: '/superwomen', label: 'база специалисток' }
   ]

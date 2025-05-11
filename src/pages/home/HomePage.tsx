@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ModalContext } from '../../hooks/useModal/useModalProvider';
 import Modal from '../../components/modal/modal';
-import EventForm from '../../components/forms/eventForm/eventForm';
+import EventForm from '../../components/forms/EventForm';
 import Layout from '../../components/layout/Layout';
 import Description from '../../components/descriptionSection/Description';
 import styles from './HomePage.module.css';

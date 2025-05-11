@@ -1,8 +1,8 @@
 import { useState, useEffect, FormEvent, ChangeEvent, useCallback, FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
 import { useAppDispatch } from '../../store/hooks';
-import styles from './Form.module.css';
 import { registerUserThunk } from '../../utils/api';
+import styles from './Form.module.css';
 
 interface FormErrors {
   email?: string;
@@ -97,7 +97,7 @@ const RegistrationForm: FC<RegistrationFormProps> = ({ navigate }) => {
           confirmPassword: false
         });
         setSubmitted(false);
-        navigate('/')
+        navigate('/community')
       } else {
         setIsSuccessful(false);
       }
