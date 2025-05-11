@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Layout from '../../components/layout/Layout';
-import EventForm from '../../components/forms/eventForm/eventForm';
+import EventForm from '../../components/forms/EventForm';
 import styles from './EventsPage.module.css';
 
 const EventsPage = () => {
@@ -8,7 +8,7 @@ const EventsPage = () => {
 
   return (
     <Layout>
-      <section className={styles.events}>
+      <section className={styles.section}>
         <div className={styles.wavyContainer}>
           <EventForm navigate={navigate}/>
         </div>
