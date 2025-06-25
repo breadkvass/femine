@@ -1,0 +1,25 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.slot {
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.available {
+  background-color: #86efac;
+}
+
+.available:hover {
+  background-color: #4ade80;
+}
+
+.booked {
+  background-color: #fca5a5;
+  cursor: not-allowed;
+}

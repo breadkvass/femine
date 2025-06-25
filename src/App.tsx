@@ -8,6 +8,7 @@ import HomePage from "./pages/home/HomePage";
 import AuthPage from "./pages/auth/AuthPage";
 import AdminPage from "./pages/adminPage/AdminPage";
 import ProfilePage from "./pages/profilePage/ProfilePage";
+import CalendarPage from "./pages/calendarPage/CalendarPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
       <Route path="/events" element={<EventsPage />} />
       <Route path="/contacts" element={<HomePage />} />
       <Route path="/superwomen" element={<HomePage />} />
+      <Route path="/calendar" element={<CalendarPage />} />
       <Route path="/auth" element={<AuthPage />} />
       {/* <Route path="/community" element={< />} /> */}
       <Route path="/community/profile" element={<ProfilePage />} />
