@@ -97,7 +97,7 @@ const RegistrationForm: FC<RegistrationFormProps> = ({ navigate }) => {
           confirmPassword: false
         });
         setSubmitted(false);
-        navigate('/community')
+        navigate('/community/profile')
       } else {
         setIsSuccessful(false);
       }
