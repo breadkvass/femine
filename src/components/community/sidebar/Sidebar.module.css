@@ -1,0 +1,43 @@
+.sidebar {
+  width: 250px;
+  background-color: #fff;
+  border-right: 1px solid #eee;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f44336;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.navItem {
+  cursor: pointer;
+  color: #444;
+}
+
+.navItem:hover {
+  color: #f44336;
+}

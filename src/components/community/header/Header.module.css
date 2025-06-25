@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 16px 24px;
+    border-bottom: 1px solid #eee;
+}
+  
+.title {
+    font-size: 20px;
+    font-weight: 600;
+}
+  
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+  
+.icon {
+    width: 20px;
+    height: 20px;
+    color: #444;
+    cursor: pointer;
+}
+  
+.searchInput {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 200px;
+}

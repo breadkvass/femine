@@ -40,3 +40,8 @@ export type EventData = {
   format: 'ONLINE' | 'OFFLINE' | '';
   token: string;
 }
+
+export type Tab = {
+  id: string;
+  label: string;
+}
