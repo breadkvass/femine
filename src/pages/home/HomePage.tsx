@@ -31,7 +31,7 @@ const HomePage = () => {
               присоединиться
             </button>
           </div>
-          <p className={styles.description}>сообщество для&nbsp;представительниц разных течений феминизма</p>
+          <p className={styles.description}>сообщество для&nbsp;женщин</p>
           <span></span>
           <p className={styles.description}>оффлайн в&nbsp;Москве | онлайн по&nbsp;всему миру</p>
         </div>

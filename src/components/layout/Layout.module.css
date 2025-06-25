@@ -3,3 +3,11 @@
     display: flex;
     flex-direction: column;
 }
+
+.layoutPortal {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    margin: 0 auto;
+}

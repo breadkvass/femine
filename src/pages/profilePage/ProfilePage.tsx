@@ -13,7 +13,7 @@ const ProfilePage = () => {
     useEffect(() => {
         if (user && user.role === 'ADMIN') {
             console.log(user)
-            navigate('/admin')
+            navigate('/community/admin')
         }
     }, [user])
 

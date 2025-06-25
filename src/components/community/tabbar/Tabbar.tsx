@@ -3,16 +3,16 @@ import { Tab } from "../../../utils/types";
 import styles from './Tabbar.module.css';
 
 type TabBarProps = {
-    onTabChange: (tabId: string) => void;
+    // onTabChange: (tabId: string) => void;
     tabs: Tab[];
 }
 
-const TabBar: FC<TabBarProps> = ({ onTabChange, tabs }) => {
+const TabBar: FC<TabBarProps> = ({ tabs }) => {
     const [activeTab, setActiveTab] = useState<string>(tabs[0].id);
 
     const handleClick = (tabId: string) => {
         setActiveTab(tabId);
-        onTabChange(tabId);
+        // onTabChange(tabId);
     };
 
     return (
