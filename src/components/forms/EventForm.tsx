@@ -1,9 +1,10 @@
 import { useState, useEffect, FormEvent, ChangeEvent, useCallback, useContext, FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
 import { ModalContext } from '../../hooks/useModal/useModalProvider';
-import { getEventsThunk } from '../../utils/api';
+import Data from '../../../public/data.json';
+// import { getEventsThunk } from '../../utils/api';
 import styles from './Form.module.css';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
+// import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
 type FormErrors = {
   meeting?: string;
@@ -24,12 +25,12 @@ type EventFormProps = {
 }
 
 const EventForm: FC<EventFormProps> = ({navigate}) => {
-  const dispatch = useAppDispatch();
-  const { eventsList } = useAppSelector((state) => state.events);
+  // const dispatch = useAppDispatch();
+  // const { eventsList } = useAppSelector((state) => state.events);
   const [ , closeModal ] = useContext(ModalContext);
   const [ selectedMeeting, setSelectedMeeting ] = useState<string>('');
   const [ name, setName ] = useState<string>('');
-  const [ isAdult, setIsAdult ] = useState<boolean | null>(null);
+  const [ isAdult, setIsAdult ] = useState<'да'| 'нет' | null>(null);
   const [ telegram, setTelegram ] = useState<string>('@');
   const [ errors, setErrors ] = useState<FormErrors>({});
   const [ touched, setTouched ] = useState<TouchedFields>({
@@ -42,10 +43,13 @@ const EventForm: FC<EventFormProps> = ({navigate}) => {
   const [isFormValid, setIsFormValid] = useState<boolean>(false);
   const [ isSuccessful, setIsSuccessful ] = useState<boolean | null>(null);
 
-  useEffect(() => {
-    dispatch(getEventsThunk())
+  const eventsList = Data.events;
+
+  // useEffect(() => {
+  //   dispatch(getEventsThunk())
   
-  }, [])
+  // }, [])
+  //   console.log(selectedMeeting)
 
   const validateForm = useCallback((): boolean => {
     const newErrors: FormErrors = {};
@@ -106,12 +110,12 @@ const EventForm: FC<EventFormProps> = ({navigate}) => {
 
   const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
-    const event = eventsList.find((item) => item.id === selectedMeeting);
+    const event = eventsList.find((item) => item.value === selectedMeeting);
     if (event) {
       const formData = {
-        event: event.title,
+        event: event.label,
         name: name,
-        isAdult: isAdult ? 'Да' : 'Нет',
+        isAdult: isAdult,
         telegram: telegram
       }
 
@@ -155,9 +159,10 @@ const EventForm: FC<EventFormProps> = ({navigate}) => {
           onBlur={() => handleBlur('meeting')}
           className={styles.select}
         >
+        <option key={0} value="">выбери мероприятие</option>
           {eventsList.map((option) => (
-            <option key={option.id} value={option.id}>
-              {option.title}
+            <option key={option.value} value={option.value}>
+              {option.label}
             </option>
           ))}
         </select>
@@ -187,8 +192,8 @@ const EventForm: FC<EventFormProps> = ({navigate}) => {
             <input
               type="radio"
               name="adult"
-              checked={isAdult === true}
-              onChange={() => setIsAdult(true)}
+              checked={isAdult === 'да'}
+              onChange={() => setIsAdult('да')}
               onBlur={() => handleBlur('adult')}
               className={styles.radio}
             />
@@ -198,8 +203,8 @@ const EventForm: FC<EventFormProps> = ({navigate}) => {
             <input
               type="radio"
               name="adult"
-              checked={isAdult === false}
-              onChange={() => setIsAdult(false)}
+              checked={isAdult === 'нет'}
+              onChange={() => setIsAdult('нет')}
               onBlur={() => handleBlur('adult')}
               className={styles.radio}
             />
