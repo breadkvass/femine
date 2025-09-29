@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { TRoute } from '../../utils/types';
-import logoWhite from '../../assets/images/logo-white.png';
+import logoWhite from '../../assets/images/logo.png';
 import CustomNavLink from './customNavLink/CustomNavLink';
 import Navigation from './navigation/Navigation';
 import styles from './Header.module.css';
