@@ -1,7 +1,7 @@
 import { useState, useEffect, FormEvent, ChangeEvent, useCallback, useContext, FC } from 'react';
 import { NavigateFunction } from 'react-router-dom';
 import { ModalContext } from '../../hooks/useModal/useModalProvider';
-import Data from '../../../public/data.json';
+import Data from '../../utils/data/data.json';
 // import { getEventsThunk } from '../../utils/api';
 import styles from './Form.module.css';
 // import { useAppDispatch, useAppSelector } from '../../store/hooks';
