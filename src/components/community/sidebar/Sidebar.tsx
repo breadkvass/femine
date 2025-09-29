@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import Logo from '../../../assets/images/logo-black.png'
+import Logo from '../../../assets/images/logo.png'
 import styles from './Sidebar.module.css'
 
 type SidebarProps = {
