@@ -44,7 +44,7 @@ function escapeMarkdown($text) {
 $message = "📌 *Новая заявка на мероприятие*\n\n"
     . "*Встреча:* " . escapeMarkdown($data['event']) . "\n"
     . "*Имя:* " . escapeMarkdown($data['name']) . "\n"
-    . "*Старше 18:* " . ($data['isAdult']) . "\n"
+    . "*Старше 18:* " . ($data['isAdult'] ? 'Да' : 'Нет') . "\n"
     . "*Telegram:* " . escapeMarkdown($data['telegram']) . "\n";
 
 // Отправка в Telegram
