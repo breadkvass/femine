@@ -1,36 +1,44 @@
 .hero {
-  width: 100vw;
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
   height: max-content;
-  background-image: url("../../assets/images/photo/start.jpg");
-  background-size: cover;
-  background-position: top;
-  padding-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: flex-end;
+  justify-content: center;
+  padding-top: 120px;
+
 }
 
-.hero .content {
+.desc {
   display: flex;
-  padding-top: 20%;
-  align-items: center;
+  height: 400px;
   justify-content: flex-start;
   flex-direction: column;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .title {
-  font-family: "Rubik Spray Paint", system-ui;
-  font-weight: 400;
+  position: absolute;
+  bottom: -20px;
+  right: 190px;
+  font-weight: 600;
   font-size: 120px;
-  line-height: 124px;
+  width: min-content;
+  line-height: 80px;
   color: white;
+  /* margin-top: auto; */
 }
 
 .description {
-  width: 100%;
-  text-align: center;
-  font-weight: 700;
+  width: max-content;
+  font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  margin: 10px 0;
+  margin-bottom: 160px;
 }
 
 .hero span {
@@ -49,77 +57,16 @@
   width: 100%;
 } 
 
-.buttonCall {
-  background-color: transparent;
-  border-radius: 40px;
-  border: 2px solid var(--feminist-pink);
-  padding: 16px 32px;
-  color: white;
-  font-weight: 700;
-  font-size: 20px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  letter-spacing: 1px;
-}
 
-.buttonCall:hover {
-  color: var(--feminist-pink);
-  transform: translateY(-2px);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-color: white;
-}
 
-.buttonCall::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 105, 180, 0.2), transparent);
-  transition: all 0.5s ease;
-}
 
-.buttonCall:hover::before {
-  left: 100%;
-}
-
-.buttonCall:active {
-  transform: translateY(0);
-  transition: all 0.1s ease;
-}
-
-.buttonCall:active {
-  animation: buttonClick 0.3s ease;
-}
-
-/* Анимация при нажатии */
-@keyframes buttonClick {
-  0% { transform: scale(1); }
-  50% { transform: scale(0.95); }
-  100% { transform: scale(1); }
-}
-
-@media screen and (min-width: 1440px) {
+/* @media screen and (min-width: 1440px) {
   .content {
     padding-top: 300px;
   }
-}
+} */
 
 @media screen and (max-width: 1024px) {
-  .buttonCall {
-    padding: 12px 24px;
-    font-size: 16px;
-  }
-
-  .call {
-    margin: 60px 0;
-    gap: 20px;
-  }
-
   .title {
     font-size: 60px;
     line-height: 64px;
