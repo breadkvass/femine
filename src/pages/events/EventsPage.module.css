@@ -1,9 +1,8 @@
 .section {
   width: 100vw;
   min-height: 100vh;
-  background-color: var(--green);
+  background-color: #7e74a8;
   padding-top: 87px;
-  background: url(../../assets/images/events-background3.svg);
   background-size: cover;
   background-position: top;
 }
