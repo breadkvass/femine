@@ -172,7 +172,7 @@ const EventForm: FC<EventFormProps> = ({navigate}) => {
       </div>
 
       <div className={styles.inputGroup}>
-        <label className={styles.label}>твоё имя</label>
+        <label className={styles.label}>имя или псевдоним</label>
         <input
           type="text"
           value={name}
@@ -223,6 +223,7 @@ const EventForm: FC<EventFormProps> = ({navigate}) => {
           onBlur={() => handleBlur('telegram')}
           className={styles.input}
         />
+        <p className={styles.tooltip}>будь внимательна, иначе мы не сможем с тобой связаться</p>
         {shouldShowError('telegram') && (
           <span className={styles.error}>{errors.telegram}</span>
         )}
@@ -241,16 +242,16 @@ const EventForm: FC<EventFormProps> = ({navigate}) => {
     <div className={styles.final}>
       <p>Спасибо, что&nbsp;записалась на&nbsp;встречу! Буду&nbsp;рада тебя увидеть!</p>
       <p>Я постараюсь связаться с&nbsp;тобой в&nbsp;телеграме как&nbsp;можно быстрее, 
-        но&nbsp;если&nbsp;ответ затянется, ты всегда можешь маякнуть мне в&nbsp;комментариях 
-        на&nbsp;нашем <a href='http://t.me/femine_moscow'>telegram-канале</a></p>
+        но&nbsp;если&nbsp;ответ затянется, ты всегда можешь маякнуть нам в&nbsp;в&nbsp;
+        <a href='http://t.me/femine_admin'>telegram</a></p>
       <button className={styles.button} onClick={closeHandler}>хорошо, спасибо &#128150;</button>
     </div>
   ) : (
     <div className={styles.final}>
       <p>Упс... Не получилось отправить форму.</p>
-      <p>Пожалуйста, попробуй позже. Если снова не выйдет, маякни в&nbsp;комментариях 
-        на&nbsp;нашем <a href='http://t.me/femine_moscow'>telegram-канале</a>. Буду 
-        тебе очень благодарна!</p>
+      <p>Пожалуйста, попробуй позже. Если снова не выйдет, напиши нам
+        в&nbsp;<a href='http://t.me/femine_admin'>telegram</a>. Будем 
+        тебе очень благодарны!</p>
       <button className={styles.button} onClick={closeHandler}>хорошо, я попробую &#128546;</button>
     </div>
   ))

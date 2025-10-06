@@ -13,7 +13,10 @@ body {
 
 :root {
   --feminist-pink: #ea598b;
-  --green-dark: #426842fa;
+  --green-dark: #294b32;
+  --purple-light: #b2adcb;
+  --beige: #dacacb;
+  --purple: #7e74a8;
   --transition-time: 0.3s;
   overflow-x: hidden;
 }

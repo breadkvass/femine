@@ -1,4 +1,5 @@
-export type ActiveLinkType = '/' | '/about' | '/contacts' | '/auth' | '/community';
+// export type ActiveLinkType = '/' | '/about' | '/contacts' | '/auth' | '/community';
+export type ActiveLinkType = string;
 
 export type TRoute = {
     route: ActiveLinkType;
