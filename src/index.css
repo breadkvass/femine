@@ -8,11 +8,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   margin-top: -87px;
+  background-color: #7e74a8;
 }
 
 :root {
   --feminist-pink: #ea598b;
-  --green: #426842fa;
+  --green-dark: #426842fa;
   --transition-time: 0.3s;
   overflow-x: hidden;
 }
