@@ -58,39 +58,42 @@ const SlideGallery: React.FC<SlideGalleryProps> = ({
   };
 
   return (
-    <>
-    <div
-      className={`${styles.gallery} ${className || ''}`}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-    >
-      {/* Слайды */}
+    <div className={styles.wrapper}>
       <div
-        className={styles.slider}
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {images.map((src, i) => (
-          <div key={i} className={styles.slide}>
-            <img src={src} alt={`slide-${i + 1}`} draggable={false} />
-          </div>
-        ))}
+        className={`${styles.gallery} ${className || ''}`}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}>
+
+        {/* Слайды */}
+        <div
+          className={styles.slider}
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {images.map((src, i) => (
+            <div key={i} className={styles.slide}>
+              <img src={src} alt={`slide-${i + 1}`} draggable={false} />
+            </div>
+          ))}
+
+        </div>
+
+
+        
       </div>
 
-
       {/* Индикаторы */}
-      {showDots && (
-        <div className={styles.dots}>
-          {images.map((_, i) => (
-            <button
-              key={i}
-              className={`${styles.dot} ${i === currentIndex ? styles.active : ''}`}
-              onClick={() => setCurrentIndex(i)}
-            />
-          ))}
-        </div>
-      )}
-    </div>
-    
+        {showDots && (
+          <div className={styles.dots}>
+            {images.map((_, i) => (
+              <button
+                key={i}
+                className={`${styles.dot} ${i === currentIndex ? styles.active : ''}`}
+                onClick={() => setCurrentIndex(i)}
+              />
+            ))}
+          </div>
+        )}
+
       {/* Навигация */}
       {showArrows && (
         <>
@@ -102,8 +105,7 @@ const SlideGallery: React.FC<SlideGalleryProps> = ({
           </button>
         </>
       )}
-    </>
-    
+    </div>
   );
 };
 

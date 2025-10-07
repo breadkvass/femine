@@ -1,9 +1,16 @@
-.gallery {
+.wrapper {
+  width: 50%;
+  max-width: 700px;
   position: relative;
+}
+
+.gallery {
   width: 100%;
   max-width: 700px;
   overflow: hidden;
   background: #000;
+  border: 4px solid white;
+  aspect-ratio: 16 / 10;
 }
 
 .slider {
@@ -14,7 +21,6 @@
 
 .slide {
   min-width: 100%;
-  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,13 +31,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   pointer-events: none;
   user-select: none;
 }
 
 .arrow {
   position: absolute;
-  top: 50%;
+  top: 34%;
   transform: translateY(-50%);
   color: var(--feminist-pink);
   border: none;
@@ -41,7 +48,7 @@
   width: 24px;
   height: 24px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background-color 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,11 +57,11 @@
 }
 
 .arrow:hover {
-  background: rgba(255,255,255,0.9);
+  background-color: rgba(255,255,255,0.9);
 }
 
-.left { left: 56px;  }
-.right { left: 860px; }
+.left { left: -48px; }
+.right { right: -48px; }
 
 .dots {
   position: absolute;
@@ -70,11 +77,46 @@
   height: 10px;
   border-radius: 50%;
   border: none;
-  background: rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.4);
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background-color 0.2s;
 }
 
 .dot.active {
   background: rgba(255,255,255,1);
+}
+
+
+@media screen and (max-width: 1280px) {
+  .arrow {
+    top: 26%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .arrow {
+    top: 22%;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .arrow {
+    top: 12%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    margin: 0 auto;
+    order: 2;
+    width: 80%;
+  }
+
+  .arrow {
+    font-size: 60px;
+    top: 50%;
+  }
+
+  .left { left: -28px; }
+  .right { right: -28px; }
 }
