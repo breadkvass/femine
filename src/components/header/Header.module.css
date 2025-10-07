@@ -1,6 +1,6 @@
 .header {
   width: 100vw;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: var(--purple);
   transition: all .7s cubic-bezier(0.4, 0, 0.2, 1);
   position: sticky;
   top: 0;
@@ -35,7 +35,7 @@
 }
 
 .header.scrolled {
-  background-color: rgba(69, 74, 69, 0.5);
+  background-color: #7e74a87d;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); /* Для Safari */
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -45,6 +45,12 @@
 @media screen and (max-width: 1024px) {  
   .content {
     width: calc(100vw - 64px);
+  }
+}
+
+@media screen and (max-width: 768px) {  
+  .content {
+    padding: 16px 0;
   }
 }
 
