@@ -18,19 +18,17 @@
   height: 400px;
   justify-content: flex-start;
   flex-direction: column;
-  /* margin: 0 auto; */
 }
 
 .title {
   position: absolute;
-  bottom: -20px;
-  right: 190px;
+  bottom: 0;
+  right: 192px;
   font-weight: 600;
-  font-size: 120px;
+  font-size: 132px;
   width: min-content;
-  line-height: 80px;
+  line-height: 84px;
   color: white;
-  /* margin-top: auto; */
 }
 
 .description {
@@ -38,7 +36,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  margin-bottom: 160px;
+  margin-bottom: 190px;
 }
 
 .hero span {
