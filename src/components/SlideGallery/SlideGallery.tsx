@@ -78,7 +78,10 @@ const SlideGallery: React.FC<SlideGalleryProps> = ({
         </div>
 
 
-        {/* Индикаторы */}
+        
+      </div>
+
+      {/* Индикаторы */}
         {showDots && (
           <div className={styles.dots}>
             {images.map((_, i) => (
@@ -90,7 +93,6 @@ const SlideGallery: React.FC<SlideGalleryProps> = ({
             ))}
           </div>
         )}
-      </div>
 
       {/* Навигация */}
       {showArrows && (

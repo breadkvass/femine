@@ -42,9 +42,9 @@
   color: black;
 }
 
-@media screen and (max-width: 767px) {  
+@media screen and (max-width: 1024px) {  
   .content {
-    width: calc(100vw - 80px);
+    width: calc(100vw - 64px);
   }
 }
 
