@@ -1,0 +1,6 @@
+.event {
+    background-color: var(--beige);
+    border-radius: 16px;
+    display: flex;
+    gap: 20px;
+}
